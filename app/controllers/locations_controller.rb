@@ -50,6 +50,6 @@ class LocationsController < ApplicationController
     end
 
     def location_params
-      params.require(:location).permit(:map_id, :superlocation_id, :name, :type, :string, :notes, :image)
+      params.require(:location).permit(:map_id, :superlocation_id, :x_coordinate, :y_coordinate, :name, :type, :notes, :image)
     end
 end
