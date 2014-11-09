@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Map:</strong>
+  <%= @location.map_id %>
+</p>
+
+<p>
+  <strong>Superlocation:</strong>
+  <%= @location.superlocation_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @location.name %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @location.type %>
+</p>
+
+<p>
+  <strong>String:</strong>
+  <%= @location.string %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @location.notes %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @location.image %>
+</p>
+
+<%= link_to 'Edit', edit_location_path(@location) %> |
+<%= link_to 'Back', locations_path %>

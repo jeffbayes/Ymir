@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141109005042) do
+ActiveRecord::Schema.define(version: 20141109075457) do
 
   create_table "campaigns", force: true do |t|
     t.string   "name"
@@ -30,11 +30,34 @@ ActiveRecord::Schema.define(version: 20141109005042) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "locations", force: true do |t|
+    t.integer  "map_id"
+    t.integer  "superlocation_id"
+    t.string   "name"
+    t.string   "type"
+    t.string   "string"
+    t.text     "notes"
+    t.string   "image"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
   create_table "maps", force: true do |t|
     t.integer  "campaign_id"
     t.text     "notes"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "npcs", force: true do |t|
+    t.integer  "map_id"
+    t.integer  "location_id"
+    t.string   "name"
+    t.text     "notes"
+    t.string   "character_sheet"
+    t.string   "image"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "users", force: true do |t|

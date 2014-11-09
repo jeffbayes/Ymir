@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Npcs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Map</th>
+      <th>Location</th>
+      <th>Name</th>
+      <th>Notes</th>
+      <th>Character sheet</th>
+      <th>Image</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @npcs.each do |npc| %>
+      <tr>
+        <td><%= npc.map_id %></td>
+        <td><%= npc.location_id %></td>
+        <td><%= npc.name %></td>
+        <td><%= npc.notes %></td>
+        <td><%= npc.character_sheet %></td>
+        <td><%= npc.image %></td>
+        <td><%= link_to 'Show', npc %></td>
+        <td><%= link_to 'Edit', edit_npc_path(npc) %></td>
+        <td><%= link_to 'Destroy', npc, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Npc', new_npc_path %>

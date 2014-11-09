@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  map_id: 1
+  superlocation_id: 1
+  name: MyString
+  type: 
+  string: MyString
+  notes: MyText
+  image: MyString
+
+two:
+  map_id: 1
+  superlocation_id: 1
+  name: MyString
+  type: 
+  string: MyString
+  notes: MyText
+  image: MyString

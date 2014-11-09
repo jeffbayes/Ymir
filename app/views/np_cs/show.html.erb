@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Map:</strong>
+  <%= @npc.map_id %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @npc.location_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @npc.name %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @npc.notes %>
+</p>
+
+<p>
+  <strong>Character sheet:</strong>
+  <%= @npc.character_sheet %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @npc.image %>
+</p>
+
+<%= link_to 'Edit', edit_npc_path(@npc) %> |
+<%= link_to 'Back', npcs_path %>
