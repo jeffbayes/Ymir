@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
   end
 
   def testmap
+    render layout: 'testmap'
   end
   
   def after_sign_in_path_for(resource)
