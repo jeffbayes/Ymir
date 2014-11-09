@@ -78,7 +78,10 @@
 <div class="container">
   <div class="row"> <br><br><br><br>
 
-<select size="1" id="race" name="race">
+
+
+<h1>Random Name Generator</h1>
+<select size="1" id="race" name="race" class='form-control' style="width:200px; display:inline-block; height:3.25rem;">
 <option value="">-- Choose Race --</option>
 <option value="human">Human</option>
 <option value="dwarves">Dwarf</option>
@@ -86,23 +89,14 @@
 <option value="orcs">Orcs</option>
 </select>
 
-<select size="1" id="domain" name="domain">
+<select size="1" id="domain" name="domain" class="form-control" style="width:200px; display:inline-block; height:3.25rem;">
 <option value="">-- Choose Domain --</option>
 <option value="kingdom">Kingdom</option>
 <option value="people">Character</option>
 <option value="tavern">Tavern</option>
 <option value="city">City</option>
 </select>
-
-<h1>Random Name Generator</h1>
-
-<button onclick="generator ('dwarves', 'kingdom', 'people', 'tavern', 'city')">Dwarf Button</button>
-
-<button onclick="generator ('orcs', 'kingdom', 'people', 'tavern', 'city')">Orc button</button>
-
-<button onclick="generator ('human', 'kingdom', 'people', 'tavern', 'city')">Human button</button>
-
-<button onclick="generator ('elves', 'kingdom', 'people', 'tavern', 'city')">Elf button</button>
+<button  class="btn btn-primary"onclick="generator ('dwarves', 'kingdom', 'people', 'tavern', 'city')">Generate</button>
 
 <p id="demo1"></p>
 
