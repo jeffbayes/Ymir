@@ -33,13 +33,18 @@
   </div>
   <div class="row">
     <% @campaigns.each do |campaign| %>
-      <div class="col-md-4" style="background:#555; overflow:hidden; height: 250px; border: 1px solid black;">
+      <div class="col-md-4" style="background:#005792; overflow:hidden; height: 250px; border: 1px solid black;">
+      <br>
 
         <h2 class="text-center"><%= campaign.name %></h2>
         <div class="text-center"><%= campaign.notes.truncate(300, omission: '... (continued)') %></div>
         <br>
-        <br>
-        <div class="text-center">
+        <div class="text-center" style="background: #E7E7E7;
+padding: 2rem;
+position: relative;
+top: 6.5rem;
+width: 110%;
+left: -2rem;">
           <a href="/campaign/1">Show</a> //
           <%= link_to 'Edit', edit_campaign_path(campaign) %> // 
           <%= link_to 'Destroy', campaign, method: :delete, data: { confirm: 'Are you sure?' } %>
