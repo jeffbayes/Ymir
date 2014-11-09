@@ -3,9 +3,10 @@ class CreateLocations < ActiveRecord::Migration
     create_table :locations do |t|
       t.integer :map_id
       t.integer :superlocation_id
+      t.integer :x_coordinate
+      t.integer :y_coordinate
       t.string :name
       t.string :type
-      t.string :string
       t.text :notes
       t.attachment :image
 
