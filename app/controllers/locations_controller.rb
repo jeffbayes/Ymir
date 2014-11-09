@@ -5,11 +5,19 @@ class LocationsController < ApplicationController
 
   def index
     @locations = Location.all
-    respond_with(@locations)
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @locations }
+      format.json { render :json => @locations }
+    end
   end
 
   def show
-    respond_with(@location)
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @location }
+      format.json { render :json => @location }
+    end
   end
 
   def new

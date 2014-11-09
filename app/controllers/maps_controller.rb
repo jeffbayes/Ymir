@@ -5,11 +5,19 @@ class MapsController < ApplicationController
 
   def index
     @maps = Map.all
-    respond_with(@maps)
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @maps }
+      format.json { render :json => @maps }
+    end
   end
 
   def show
-    respond_with(@map)
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @map }
+      format.json { render :json => @map }
+    end
   end
 
   def new
