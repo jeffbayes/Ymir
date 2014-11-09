@@ -1,6 +1,7 @@
 class CreateNpcs < ActiveRecord::Migration
   def change
     create_table :npcs do |t|
+      t.integer :campaign_id
       t.integer :map_id
       t.integer :location_id
       t.string :name
