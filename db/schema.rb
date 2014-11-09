@@ -26,38 +26,58 @@ ActiveRecord::Schema.define(version: 20141109075457) do
     t.integer  "role"
     t.string   "name"
     t.text     "notes"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "character_sheet_file_name"
+    t.string   "character_sheet_content_type"
+    t.integer  "character_sheet_file_size"
+    t.datetime "character_sheet_updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   create_table "locations", force: true do |t|
     t.integer  "map_id"
     t.integer  "superlocation_id"
+    t.integer  "x_coordinate"
+    t.integer  "y_coordinate"
     t.string   "name"
     t.string   "type"
-    t.string   "string"
     t.text     "notes"
-    t.string   "image"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end
 
   create_table "maps", force: true do |t|
     t.integer  "campaign_id"
+    t.string   "name"
     t.text     "notes"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   create_table "npcs", force: true do |t|
+    t.integer  "campaign_id"
     t.integer  "map_id"
     t.integer  "location_id"
     t.string   "name"
     t.text     "notes"
-    t.string   "character_sheet"
-    t.string   "image"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.string   "character_sheet_file_name"
+    t.string   "character_sheet_content_type"
+    t.integer  "character_sheet_file_size"
+    t.datetime "character_sheet_updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   create_table "users", force: true do |t|
