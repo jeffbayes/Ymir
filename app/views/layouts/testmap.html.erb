@@ -16,7 +16,17 @@
         $('.edit_area').editable(function(value, settings) {
              $(this).html(value);
              newcities[window.currentCity][3] = value;
-             updateCity(newcities[window.currentCity], [window.currentCity][4]);
+             updateCity(newcities[window.currentCity]);
+          }, {
+             type    : 'textarea',
+             submit  : 'OK',
+             cancel    : 'Cancel',
+             cssclass: 'inputbox'
+         });
+        $('.edit_title').editable(function(value, settings) {
+             $(this).html(value);
+             newcities[window.currentCity][2] = value;
+             updateCity(newcities[window.currentCity]);
           }, {
              type    : 'textarea',
              submit  : 'OK',
@@ -109,7 +119,7 @@
             var c = city[2];
             var d = city[3];
             var e = city[4];
-            return { "location": {x_coordinate:a, y_coordinate:b, name:c, notes:d, id:e}};
+            return { "location": {x_coordinate:a, y_coordinate:b, name:c, notes:d, id:e, }};
         }
 
         function JsonToCity(city){
@@ -118,15 +128,15 @@
         }
 
         // console.log(cityToJson(newcities[0]));
-        function updateCity(city, i){
+        function updateCity(city){
             var json = cityToJson(city);
             console.log(json);
             $.ajax({
-              url: 'locations/' + json.location.id,
+              url: '/locations/' + json.location.id,
               type: 'PUT',
               data: json,
               success: function(data) {
-                alert(data);
+                console.log(data);
               }
             });
         }
