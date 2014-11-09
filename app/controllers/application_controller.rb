@@ -8,6 +8,10 @@ class ApplicationController < ActionController::Base
   def index
   end
 
+  def tools
+    render layout: 'testmap'
+  end
+
   def testmap
     render layout: 'testmap'
   end

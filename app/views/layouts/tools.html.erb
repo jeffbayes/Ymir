@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ymir - Build your world.</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <script>
+  var classes = {
+    dwarves: {
+      city: ["Vigoroth", "Gruthsume", "Torvile", "Trilivine", "Villiane"],
+      people: ["Dwingar", "Thrim", "Dalni", "Groi", "Thortil"],
+      tavern: ["The Careless Palm Inn", "The Centaur's Hall", 
+      "The Goblin's Alehouse", "The Handy Nut Tavern", "The Rare Chant Tavern"],
+      kingdom: ["Kingdom Of Grylla", "Kingdom Of Iboeron", "Kingdom Of Etanna", "Kingdom Of Edaub", "Kingdom Of Ereader"]
+    },
+    elves: {
+      city: ["Sylilion", "Prifddinas", "Thylnlin", "Aa Lenora", "Yllsserine"],
+      people: ["Aranwë", "Aedasdrach", "Tharsirdien", "Rission", 
+      "Imlassdad"],
+      tavern: ["The Owl's Inn", "The Quaint Raven", "The Abstract Tavern",
+           "The Immortal Paladin", "The Godly Night Elf Tavern"],
+      kingdom: ["Kingdom Of Eowoadien", "Kingdom Of Soec", "Kingdom Of Soeven", "Kingdom Of Hirebeth", "Kingdom Of Acorewen"]
+    },
+    human: {
+      city: ["Llyne", "Sharnwick", "Larcbost", "Leeside", "Stathford"],
+      people: ["Roy", "Tarce", "Houston", "Grange", "Ryson"],
+      tavern: ["The Dusty Sword ", "The Brave City ", "Ye Olde King Inn",
+           "The Familiar Bar", "The Sparkling Bass "],
+      kingdom: ["Kingdom Of Adwan", "Kingdom Of Perared", "Kingdom Of Ethelinad", "Kingdom Of Serarien", "Kingdom Of Zoan"]
+    },
+    orcs: {
+      city: ["Gat", "Struldge", "Stratagroth", "Fleex", "Quilch"],
+      people: ["Morgob", "Grimore", "Grotthug", "Maggog", "Grimzod"],
+      tavern: ["The Loud Bar", "The Centaur's Hall", "The Goblin's Alehouse",
+           "The Right Orc ", "The Mammoth"],
+      kingdom: ["Kingdom Of Grylla", "Kingdom Of Iboeron", "Kingdom Of Rhireng", "Kingdom Of Aciejan", "Kingdom Of Abieng"]
+    }
+  }
+
+  function generator (race,trait) {
+    var number = parseInt(Math.random()*5);
+    console.log(number);
+    var output = classes[race][trait][number];
+    $('#demo1').html(output);
+  };
+</script>
+
+</head>
+<body>
+
+<select size="1" id="race" name="race">
+<option value="">-- Choose Race --</option>
+<option value="human">Human</option>
+<option value="dwarves">Dwarf</option>
+<option value="elves">Elf</option>
+<option value="orcs">Orcs</option>
+</select>
+
+<select size="1" id="domain" name="domain">
+<option value="">-- Choose Domain --</option>
+<option value="kingdom">Kingdom</option>
+<option value="people">Character</option>
+<option value="tavern">Tavern</option>
+<option value="city">City</option>
+</select>
+
+<h1>Random Name Generator</h1>
+
+<button onclick="generator ('dwarves', 'kingdom', 'people', 'tavern', 'city')">Dwarf Button</button>
+
+<button onclick="generator ('orcs', 'kingdom', 'people', 'tavern', 'city')">Orc button</button>
+
+<button onclick="generator ('human', 'kingdom', 'people', 'tavern', 'city')">Human button</button>
+
+<button onclick="generator ('elves', 'kingdom', 'people', 'tavern', 'city')">Elf button</button>
+
+<p id="demo1"></p>
+
+<%= yield %>
+
+</body>
+</html>
