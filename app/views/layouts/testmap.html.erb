@@ -14,6 +14,7 @@
   	$().ready( function() {
   		$('.edit_area').editable(function(value, settings) {
   		     $(this).html(value);
+  		     newcities[window.currentCity][3] = value;
   		  }, {
   		     type    : 'textarea',
   		     submit  : 'OK',
@@ -109,7 +110,15 @@
   			for(i=0; i< cities.length; i++ ){
   				var json = cityToJson(cities[i]);
   				console.log(json);
-  				// ajax request;
+  				
+  				$.ajax({
+					type: "POST",
+					url: "/locations",
+					data: json
+  				})
+  				.done(function( msg ) {
+  					alert( "Data Saved: " + msg );
+  				});
   			}
   		}
   		function getCities(){
