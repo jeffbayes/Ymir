@@ -55,7 +55,39 @@
 </head>
 <body>
 
-<select size="1" id="race" name="race">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to "Ymir", root_path, :class => "navbar-brand" %>
+    </div>  
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li ><a href="#">Campaigns</a></li>
+        <li class="active"><a href="#">Tools</a></li>
+        </li>
+      </ul>
+      <div class="navbar-form navbar-right" role="form">
+        <div class="form-group">
+          <%= button_to "Sign Out", destroy_user_session_path, :class => "btn sign-in-up btn-primary", :method => :delete  %>
+        </div>
+      </form>
+    </div><!--/.navbar-collapse -->
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row"> <br><br><br><br>
+
+
+
+<h1>Random Name Generator</h1>
+<select size="1" id="race" name="race" class='form-control' style="width:200px; display:inline-block; height:3.25rem;">
 <option value="">-- Choose Race --</option>
 <option value="human">Human</option>
 <option value="dwarves">Dwarf</option>
@@ -63,7 +95,7 @@
 <option value="orcs">Orc</option>
 </select>
 
-<select size="1" id="domain" name="domain">
+<select size="1" id="domain" name="domain" class="form-control" style="width:200px; display:inline-block; height:3.25rem;">
 <option value="">-- Choose Domain --</option>
 <option value="kingdom">Kingdom</option>
 <option value="people">Character</option>
@@ -71,13 +103,14 @@
 <option value="city">City</option>
 </select>
 
-<h1>Random Name Generator</h1>
-
-<button onclick="generator()">Dwarf Button</button>
+<button  class="btn btn-primary"onclick="generator ('dwarves', 'kingdom', 'people', 'tavern', 'city')">Generate</button>
 
 <p id="demo1"></p>
 
 <%= yield %>
+
+</div>
+</div>
 
 </body>
 </html>
