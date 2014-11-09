@@ -8,7 +8,7 @@ class CreateLocations < ActiveRecord::Migration
       t.string :name
       t.string :type
       t.text :notes
-      t.attachment :image
+      # t.attachment :image
 
       t.timestamps null: false
     end
