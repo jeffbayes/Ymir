@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   end
 
   def tools
-    render layout: 'testmap'
+    render layout: 'tools'
   end
 
   def testmap

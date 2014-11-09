@@ -25,7 +25,7 @@ Rails.application.routes.draw do
 
 
 
-  get '/tools' => "application#tools"
+  get 'tools/' => "application#tools"
 
   get 'campaign/1' => "application#testmap"
 
