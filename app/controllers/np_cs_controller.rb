@@ -5,11 +5,19 @@ class NpCsController < ApplicationController
 
   def index
     @npcs = Npc.all
-    respond_with(@npcs)
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @npcs }
+      format.json { render :json => @npcs }
+    end
   end
 
   def show
-    respond_with(@npc)
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @npc }
+      format.json { render :json => @npc }
+    end
   end
 
   def new

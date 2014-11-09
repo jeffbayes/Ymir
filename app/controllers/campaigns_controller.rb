@@ -5,11 +5,19 @@ class CampaignsController < ApplicationController
 
   def index
     @campaigns = Campaign.all
-    respond_with(@campaigns)
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @campaigns }
+      format.json { render :json => @campaigns }
+    end
   end
 
   def show
-    respond_with(@campaign)
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @campaign }
+      format.json { render :json => @campaign }
+    end
   end
 
   def new

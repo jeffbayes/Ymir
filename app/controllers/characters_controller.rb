@@ -5,11 +5,19 @@ class CharactersController < ApplicationController
 
   def index
     @characters = Character.all
-    respond_with(@characters)
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @characters }
+      format.json { render :json => @characters }
+    end
   end
 
   def show
-    respond_with(@character)
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @character }
+      format.json { render :json => @character }
+    end
   end
 
   def new
