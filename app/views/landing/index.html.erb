@@ -1,0 +1,13 @@
+<h1>This is the index of the landing page folder.</h1>
+
+<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+
+<% if user_signed_in? %>
+	<h2>SIGNED IN</h2>
+<% else %>
+	<h2>Log in</h2>
+
+	<%= link_to "Sign in", new_user_session_path, :method => :get %>
+
+<% end %>
+
