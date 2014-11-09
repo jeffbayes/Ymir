@@ -11,8 +11,7 @@
     </div>  
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link</a></li>
-        <li><a href="#">Campaigns</a></li>
+        <li class="active"><a href="#">Campaigns</a></li>
         <li><a href="#">Tools</a></li>
         </li>
       </ul>
@@ -28,7 +27,7 @@
 <br><br>
 
 <div class="container">
-  <div class="row">
+  <div class="row"> <br>
     <h1>Campaigns</h1>
     <div style="float:right; position:relative; top:-3rem;"><%= button_to '+ New Campaign', new_campaign_path, :class => "btn sign-in-up-form btn-primary", :method => :get %></div>
   </div>
@@ -37,11 +36,11 @@
       <div class="col-md-4" style="background:#555; overflow:hidden; height: 250px; border: 1px solid black;">
 
         <h2 class="text-center"><%= campaign.name %></h2>
-        <%= campaign.notes.truncate(300, omission: '... (continued)') %>
+        <div class="text-center"><%= campaign.notes.truncate(300, omission: '... (continued)') %></div>
         <br>
         <br>
         <div class="text-center">
-          <%= link_to 'Show', campaign %> //
+          <a href="/campaign/1">Show</a> //
           <%= link_to 'Edit', edit_campaign_path(campaign) %> // 
           <%= link_to 'Destroy', campaign, method: :delete, data: { confirm: 'Are you sure?' } %>
         </div>

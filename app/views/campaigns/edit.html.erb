@@ -1,6 +1,42 @@
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to "Ymir", root_path, :class => "navbar-brand" %>
+    </div>  
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Campaigns</a></li>
+        <li><a href="#">Tools</a></li>
+        </li>
+      </ul>
+      <div class="navbar-form navbar-right" role="form">
+        <div class="form-group">
+          <%= button_to "Sign Out", destroy_user_session_path, :class => "btn sign-in-up btn-primary", :method => :delete  %>
+        </div>
+      </form>
+    </div><!--/.navbar-collapse -->
+  </div>
+</nav>
+
+<br><br>
+
+<div class="container">
+  <div class="row">
+
+<br>
 <h1>Editing Campaign</h1>
+
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @campaign %> |
+<a href="/campaign/1">Show</a> |
 <%= link_to 'Back', campaigns_path %>
+
+</div>
+</div>
