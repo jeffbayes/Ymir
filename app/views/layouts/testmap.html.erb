@@ -12,6 +12,12 @@
   <script src="models.js"></script>
   <script src="map.js"></script> -->
   <script>
+  window.onload = function() {
+      if(!window.location.hash) {
+          window.location = window.location + '#loaded';
+          window.location.reload();
+      }
+  }
     $().ready( function() {
         $('.edit_area').editable(function(value, settings) {
              $(this).html(value);
@@ -146,7 +152,7 @@
             console.log(json);
             $.post( "/locations", json)
               .done(function( data ) {
-                alert( "Data Loaded: " + data );
+                // alert( "Data Loaded: " + data );
               });
             
             // $.post( "/locations", function( data ) {
