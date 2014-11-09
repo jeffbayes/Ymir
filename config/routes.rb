@@ -1,14 +1,16 @@
 Rails.application.routes.draw do
 
-  resources :locations
-
-  resources :npcs
-
   authenticated :user do
     root :to => "campaigns#index", :as => "authenticated_root"
   end
 
   root 'landing#index'
+
+  resources :locations
+
+  resources :npcs
+
+
   
   resources :maps
 
