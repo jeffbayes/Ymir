@@ -1,9 +1,8 @@
-class CreateCharacters < ActiveRecord::Migration
+class CreateNpcs < ActiveRecord::Migration
   def change
-    create_table :characters do |t|
-      t.integer :user_id
-      t.integer :campaign_id
-      t.integer :role
+    create_table :npcs do |t|
+      t.integer :map_id
+      t.integer :location_id
       t.string :name
       t.text :notes
       t.attachment :character_sheet

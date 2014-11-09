@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Locations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Map</th>
+      <th>Superlocation</th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>String</th>
+      <th>Notes</th>
+      <th>Image</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @locations.each do |location| %>
+      <tr>
+        <td><%= location.map_id %></td>
+        <td><%= location.superlocation_id %></td>
+        <td><%= location.name %></td>
+        <td><%= location.type %></td>
+        <td><%= location.string %></td>
+        <td><%= location.notes %></td>
+        <td><%= location.image %></td>
+        <td><%= link_to 'Show', location %></td>
+        <td><%= link_to 'Edit', edit_location_path(location) %></td>
+        <td><%= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Location', new_location_path %>
