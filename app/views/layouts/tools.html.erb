@@ -38,12 +38,18 @@
     }
   }
 
-  function generator (race,trait) {
+  function generator () {
+    var race = document.getElementById("race");
+    var raceVal = race.options[race.selectedIndex].value;
+    var domain = document.getElementById("domain");
+    var domainVal = domain.options[domain.selectedIndex].value;
+    console.log(raceVal,domainVal);
     var number = parseInt(Math.random()*5);
     console.log(number);
-    var output = classes[race][trait][number];
+    var output = classes[raceVal][domainVal][number];
     $('#demo1').html(output);
   };
+
 </script>
 
 </head>
@@ -86,7 +92,7 @@
 <option value="human">Human</option>
 <option value="dwarves">Dwarf</option>
 <option value="elves">Elf</option>
-<option value="orcs">Orcs</option>
+<option value="orcs">Orc</option>
 </select>
 
 <select size="1" id="domain" name="domain" class="form-control" style="width:200px; display:inline-block; height:3.25rem;">
@@ -96,6 +102,7 @@
 <option value="tavern">Tavern</option>
 <option value="city">City</option>
 </select>
+
 <button  class="btn btn-primary"onclick="generator ('dwarves', 'kingdom', 'people', 'tavern', 'city')">Generate</button>
 
 <p id="demo1"></p>
