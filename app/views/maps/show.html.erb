@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Campaign:</strong>
+  <%= @map.campaign_id %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @map.notes %>
+</p>
+
+<%= link_to 'Edit', edit_map_path(@map) %> |
+<%= link_to 'Back', maps_path %>
