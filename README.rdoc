@@ -1,3 +1,5 @@
+http://ymirdnd.herokuapp.com
+
 Disclaimer for employers: neither of us had any idea what we were doing going in to this. 
 I had some experience with Django, but never with Rails. Anyway, it was built at CodeDay Portland
 from ~1PM until 9AM. Enjoy Ymir!
